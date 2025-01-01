@@ -11,6 +11,14 @@ import SideNav from '@/components/SideNav.vue';
 Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
 onMounted(async () => {
   const viewer = new Cesium.Viewer('cesiumContainer', {
+    geocoder: false,
+    homeButton: false,
+    sceneModePicker: false,
+    baseLayerPicker: false,
+    navigationHelpButton: false,
+    animation: false,
+    timeline: false,
+    fullscreenButton: false,
     // terrainProvider: new Cesium.EllipsoidTerrainProvider({})
     // terrainProvider: Cesium.Terrain.fromWorldTerrain(),
     terrainProvider: await Cesium.createWorldTerrainAsync({
