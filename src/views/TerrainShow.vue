@@ -1,10 +1,12 @@
 
 <template>
   <div id="cesiumContainer"></div>
+  <SideNav/>
 </template>
 <script setup>
 import * as Cesium from 'cesium'
 import { onMounted } from 'vue'
+import SideNav from '@/components/SideNav.vue';
 
 Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
 onMounted(async () => {
