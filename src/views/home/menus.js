@@ -6,9 +6,9 @@ const getHomeImg = (url) => {
   return new URL(`../../assets/images/home/${url}`, import.meta.url).href
 }
 const menus = [{
-  title: 'GIS数据类型',
+  title: '地形展示',
   imgSrc: getHomeImg('gaode-online-tile.png'),
-  path: '/data-type',
+  path: '/terrain-show',
   desc: '绘制生成常用GIS数据类型',
   tags: ['WKT', 'GeoJSON', 'GML']
 }, {
