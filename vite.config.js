@@ -7,7 +7,7 @@ import path from 'path'
 import cesium from 'vite-plugin-cesium'
 
 export default defineConfig({
-  base: '/cesium-show/',
+  // base: '/cesium-show/',
   plugins: [
     vue(),
     cesium(),
