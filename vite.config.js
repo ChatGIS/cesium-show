@@ -5,9 +5,9 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 import cesium from 'vite-plugin-cesium'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+// import { viteStaticCopy } from 'vite-plugin-static-copy'
 
-const cesiumSource = "node_modules/cesium/Build/Cesium/";
+// const cesiumSource = "node_modules/cesium/Build/Cesium/";
 export default defineConfig({
   base: '/cesium-show/',
   plugins: [
@@ -19,7 +19,7 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-    viteStaticCopy({
+    /* viteStaticCopy({
       targets: [
         {
           src: [`${cesiumSource}Assets`, `${cesiumSource}ThirdParty`, 
@@ -27,7 +27,7 @@ export default defineConfig({
           dest: './cesium'
         }
       ]
-    })
+    }) */
   ],
   resolve: {
     alias: {
