@@ -3,6 +3,7 @@
 </template>
 <script lang="js" setup>
 import { useRoute } from 'vue-router';
+import 'element-plus/es/components/message/style/css'
 
 const route =  useRoute()
 </script>

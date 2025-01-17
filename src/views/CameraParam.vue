@@ -1,4 +1,5 @@
 <template>
+  <el-watermark :content="['https://chatgis.space', '@ChatGIS']">
     <div id="cesiumContainer"></div>
     <el-form id="paramContainer" :model="form" label-width="auto" style="max-width: 600px">
         <el-form-item label="经度">
@@ -26,12 +27,15 @@
           <el-button type="primary" size="small" round @click="handleCopyCode">代码复制</el-button>
         </el-form-item>
     </el-form>
+    <SideNav/>
+  </el-watermark>
 </template>
 <script setup>
 import * as Cesium from 'cesium'
 import { onMounted, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import useClipboard from 'vue-clipboard3'
+import SideNav from '@/components/SideNav.vue'
 
 const { toClipboard } = useClipboard()
 Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
@@ -141,6 +145,6 @@ const handleCopyCode = async () => {
     padding: 30px;
     border-radius: 20px;
     top: 20px;
-    left: 20px;
+    left: 50px;
 }
 </style>
