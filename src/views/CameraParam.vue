@@ -22,19 +22,25 @@
         <el-form-item label="精简数字">
             <el-switch v-model="isSimplify" />
         </el-form-item>
+        <el-form-item>
+          <el-button type="primary" size="small" round @click="handleCopyCode">代码复制</el-button>
+        </el-form-item>
     </el-form>
 </template>
 <script setup>
 import * as Cesium from 'cesium'
 import { onMounted, ref } from 'vue'
+import { ElMessage } from 'element-plus'
+import useClipboard from 'vue-clipboard3'
 
+const { toClipboard } = useClipboard()
 Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
 const params = ref({
-  lon: 117.027247,
-  lat: 36.650047,
-  height: 500,
-  heading: 161,
-  pitch: -14,
+  lon: 117.065551,
+  lat: 36.676969,
+  height: 5181,
+  heading: 346.98,
+  pitch: -37.99,
   roll: 0
 })
 const isSimplify = ref(true)
@@ -74,7 +80,11 @@ const createHandler = () => {
     console.log(viewParams)  
   }, Cesium.ScreenSpaceEventType.MOUSE_MOVE) 
 }
-// 获取相机视角参数的函数  
+  
+/**
+ * @description: 获取相机参数
+ * @return {*}
+ */
 const getCameraViewParameters = () => {  
   const camera = viewer.camera  
 
@@ -93,7 +103,32 @@ const getCameraViewParameters = () => {
   params.value.heading = isSimplify.value ? heading.toFixed(2) : heading 
   params.value.pitch = isSimplify.value ? pitch.toFixed(2) : pitch
   params.value.roll = isSimplify.value ? roll.toFixed(2) : roll
-}  
+}
+/**
+ * @description: 复制代码
+ * @return {*}
+ */
+const handleCopyCode = async () => {
+  try {
+    const code = `
+      viewer.camera.setView({
+      destination: Cesium.Cartesian3.fromDegrees(${params.value.lon}, ${params.value.lat}, ${params.value.height}),
+      orientation: {
+        heading: Cesium.Math.toRadians(${params.value.heading}),
+        pitch: Cesium.Math.toRadians(${params.value.pitch}),
+        roll: Cesium.Math.toRadians(${params.value.roll})
+      }
+    })
+    `
+    await toClipboard(code)
+    ElMessage({
+      message: 'ChatGIS提醒您：复制成功',
+      type: 'success',
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
 </script>
 <style scoped>
 #cesiumContainer {
