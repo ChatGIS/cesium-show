@@ -1,7 +1,9 @@
 
 <template>
-  <div id="cesiumContainer"></div>
-  <SideNav/>
+  <el-watermark :content="['https://chatgis.space', '@ChatGIS']">
+    <div id="cesiumContainer"></div>
+    <SideNav/>
+  </el-watermark>
 </template>
 <script setup>
 import * as Cesium from 'cesium'
