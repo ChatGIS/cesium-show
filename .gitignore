@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# some private files
+src/utils/CustomMaterial.js
+src/views/CircleWave.vue

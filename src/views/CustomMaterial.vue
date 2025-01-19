@@ -3,12 +3,14 @@
   <el-watermark :content="['https://chatgis.space', '@ChatGIS']">
     <div id="cesiumContainer"></div>
     <SideNav/>
+    <FooterInfo/>
   </el-watermark>
 </template>
 <script setup>
 import * as Cesium from 'cesium'
 import { onMounted } from 'vue'
 import SideNav from '@/components/SideNav.vue';
+import FooterInfo from '@/components/FooterInfo.vue'
 import imgBird from '@/assets/images/other/bird.jpeg'
 
 let viewer

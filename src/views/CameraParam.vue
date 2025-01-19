@@ -28,6 +28,7 @@
         </el-form-item>
     </el-form>
     <SideNav/>
+    <FooterInfo/>
   </el-watermark>
 </template>
 <script setup>
@@ -36,6 +37,7 @@ import { onMounted, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import useClipboard from 'vue-clipboard3'
 import SideNav from '@/components/SideNav.vue'
+import FooterInfo from '@/components/FooterInfo.vue'
 
 const { toClipboard } = useClipboard()
 Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
