@@ -25,3 +25,4 @@ dist-ssr
 # some private files
 src/utils/CustomMaterial.js
 src/views/CircleWave.vue
+src/views/HexagonSpread.vue
