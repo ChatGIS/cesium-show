@@ -11,7 +11,7 @@
 import SideNav from '@/components/SideNav.vue'
 import PageWarn from '@/components/PageWarn.vue'
 import FooterInfo from '@/components/FooterInfo.vue'
-import ImageModule from '@/assets/images/home/circle-wave.png'
+import ImageModule from '@/assets/images/home/circle-wave.gif'
 </script>
 <style scoped>
 #image-container {
