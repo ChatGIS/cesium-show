@@ -8,6 +8,8 @@ const routes = [
   { name: 'CircleWaveDemo', path: '/circle-wave-demo', component: () => import('@/views/CircleWaveDemo.vue') },
   // { name: 'HexagonSpread', path: '/hexagon-spread', component: () => import('@/views/HexagonSpread.vue') },
   { name: 'HexagonSpreadDemo', path: '/hexagon-spread-demo', component: () => import('@/views/HexagonSpreadDemo.vue') },
+  // { name: 'Scanline', path: '/scanline', component: () => import('@/views/Scanline.vue') },
+  { name: 'ScanlineDemo', path: '/scanline-demo', component: () => import('@/views/ScanlineDemo.vue') },
 ]
 
 const router = createRouter({
