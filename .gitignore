@@ -27,3 +27,4 @@ src/utils/CustomMaterial.js
 src/views/CircleWave.vue
 src/views/HexagonSpread.vue
 src/views/Scanline.vue
+src/views/PolylineTrail.vue

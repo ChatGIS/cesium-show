@@ -10,6 +10,8 @@ const routes = [
   { name: 'HexagonSpreadDemo', path: '/hexagon-spread-demo', component: () => import('@/views/HexagonSpreadDemo.vue') },
   // { name: 'Scanline', path: '/scanline', component: () => import('@/views/Scanline.vue') },
   { name: 'ScanlineDemo', path: '/scanline-demo', component: () => import('@/views/ScanlineDemo.vue') },
+  // { name: 'PolylineTrail', path: '/polyline-trail', component: () => import('@/views/PolylineTrail.vue') },
+  { name: 'PolylineTrailDemo', path: '/polyline-trail-demo', component: () => import('@/views/PolylineTrailDemo.vue') },
 ]
 
 const router = createRouter({
