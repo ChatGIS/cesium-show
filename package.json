@@ -1,7 +1,7 @@
 {
   "name": "cesium-show",
   "private": true,
-  "version": "1.7.0",
+  "version": "1.7.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@turf/turf": "^7.2.0",
     "cesium": "^1.125.0",
     "element-plus": "^2.9.2",
     "huanyu": "^1.1.2",
