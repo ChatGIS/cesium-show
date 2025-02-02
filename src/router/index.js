@@ -12,6 +12,8 @@ const routes = [
   { name: 'ScanlineDemo', path: '/scanline-demo', component: () => import('@/views/ScanlineDemo.vue') },
   // { name: 'PolylineTrail', path: '/polyline-trail', component: () => import('@/views/PolylineTrail.vue') },
   { name: 'PolylineTrailDemo', path: '/polyline-trail-demo', component: () => import('@/views/PolylineTrailDemo.vue') },
+  // { name: 'DynamicWall', path: '/dynamic-wall', component: () => import('@/views/DynamicWall.vue') },
+  { name: 'DynamicWallDemo', path: '/dynamic-wall-demo', component: () => import('@/views/DynamicWallDemo.vue') },
 ]
 
 const router = createRouter({

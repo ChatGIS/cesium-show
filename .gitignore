@@ -28,3 +28,4 @@ src/views/CircleWave.vue
 src/views/HexagonSpread.vue
 src/views/Scanline.vue
 src/views/PolylineTrail.vue
+src/views/DynamicWall.vue
