@@ -14,6 +14,8 @@ const routes = [
   { name: 'PolylineTrailDemo', path: '/polyline-trail-demo', component: () => import('@/views/PolylineTrailDemo.vue') },
   // { name: 'DynamicWall', path: '/dynamic-wall', component: () => import('@/views/DynamicWall.vue') },
   { name: 'DynamicWallDemo', path: '/dynamic-wall-demo', component: () => import('@/views/DynamicWallDemo.vue') },
+  // { name: '3DTilesetShow', path: '/3dtileset-show', component: () => import('@/views/3DTilesetShow.vue') },
+  { name: '3DTilesetShowDemo', path: '/3dtileset-show-demo', component: () => import('@/views/3DTilesetShowDemo.vue') },
 ]
 
 const router = createRouter({

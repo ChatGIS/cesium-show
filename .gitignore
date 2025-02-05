@@ -29,3 +29,4 @@ src/views/HexagonSpread.vue
 src/views/Scanline.vue
 src/views/PolylineTrail.vue
 src/views/DynamicWall.vue
+src/views/3DTilesetShow.vue
