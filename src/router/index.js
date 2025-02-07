@@ -16,6 +16,7 @@ const routes = [
   { name: 'DynamicWallDemo', path: '/dynamic-wall-demo', component: () => import('@/views/DynamicWallDemo.vue') },
   // { name: '3DTilesetShow', path: '/3dtileset-show', component: () => import('@/views/3DTilesetShow.vue') },
   { name: '3DTilesetShowDemo', path: '/3dtileset-show-demo', component: () => import('@/views/3DTilesetShowDemo.vue') },
+  { name: 'ParticleFirework', path: '/particle-firework', component: () => import('@/views/ParticleFirework.vue') },
 ]
 
 const router = createRouter({
