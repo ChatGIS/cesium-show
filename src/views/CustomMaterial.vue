@@ -1,22 +1,21 @@
-
 <template>
   <el-watermark :content="['https://chatgis.space', '@ChatGIS']">
     <div id="cesiumContainer"></div>
-    <SideNav/>
-    <FooterInfo/>
+    <SideNav />
+    <FooterInfo />
   </el-watermark>
 </template>
 <script setup>
-import * as Cesium from 'cesium'
-import { onMounted } from 'vue'
-import SideNav from '@/components/SideNav.vue';
-import FooterInfo from '@/components/FooterInfo.vue'
-import imgBird from '@/assets/images/other/bird.jpeg'
+import * as Cesium from "cesium";
+import { onMounted } from "vue";
+import SideNav from "@/components/SideNav.vue";
+import FooterInfo from "@/components/FooterInfo.vue";
+import imgBird from "@/assets/images/other/bird.jpeg";
 
-let viewer
-Cesium.Ion.defaultAccessToken=import.meta.env.VITE_TOKEN_CESIUM
+let viewer;
+Cesium.Ion.defaultAccessToken = import.meta.env.VITE_TOKEN_CESIUM;
 onMounted(async () => {
-  viewer = new Cesium.Viewer('cesiumContainer', {
+  viewer = new Cesium.Viewer("cesiumContainer", {
     geocoder: false,
     homeButton: false,
     sceneModePicker: false,
@@ -26,31 +25,30 @@ onMounted(async () => {
     timeline: false,
     fullscreenButton: false,
     terrainProvider: await Cesium.createWorldTerrainAsync({
-      requestVertexNormals: true
-    })  
-  })
-  viewer.scene.debugShowFramesPerSecond = true
-  
-  
+      requestVertexNormals: true,
+    }),
+  });
+  viewer.scene.debugShowFramesPerSecond = true;
+
   viewer.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(117.066687, 36.722386, 5000),
     orientation: {
-      heading: Cesium.Math.toRadians(360.00),
+      heading: Cesium.Math.toRadians(360.0),
       pitch: Cesium.Math.toRadians(-88.34),
-      roll: Cesium.Math.toRadians(0.00)
-    }
-  })
+      roll: Cesium.Math.toRadians(0.0),
+    },
+  });
 
-  addPolygon()
-})
+  addPolygon();
+});
 class CustomMaterial {
   constructor() {
-    Cesium.Material._materialCache.addMaterial('CustomMaterial', {
+    Cesium.Material._materialCache.addMaterial("CustomMaterial", {
       fabric: {
-        type: 'CustomMaterial',
+        type: "CustomMaterial",
         uniforms: {
           uImg: imgBird,
-          uTime: 0
+          uTime: 0,
         },
         source: `
         czm_material czm_getMaterial(czm_materialInput materialInput) {
@@ -61,31 +59,36 @@ class CustomMaterial {
           material.diffuse = vec3(imgColor.rgb);
           return material;
         }
-        `
-      }
-    })
+        `,
+      },
+    });
   }
   getType() {
-    return 'CustomMaterial'
+    return "CustomMaterial";
   }
   getValue(time, result) {
-    result.uTime = performance.now() / 1000
-    return result
+    result.uTime = performance.now() / 1000;
+    return result;
   }
 }
-let customMaterial = new CustomMaterial()
+let customMaterial = new CustomMaterial();
 const addPolygon = () => {
   viewer.entities.add({
     rectangle: {
-      coordinates: Cesium.Rectangle.fromDegrees(117.058722, 36.721109, 117.070573, 36.733506),
-      material: customMaterial
-    }
-  })
-}
+      coordinates: Cesium.Rectangle.fromDegrees(
+        117.058722,
+        36.721109,
+        117.070573,
+        36.733506,
+      ),
+      material: customMaterial,
+    },
+  });
+};
 </script>
 <style scoped>
 #cesiumContainer {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 </style>
